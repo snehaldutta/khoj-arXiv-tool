@@ -1,0 +1,107 @@
+Screen {
+            layout: vertical;
+            background: #0a0f2e;
+        }
+
+        Horizontal {
+            height: 1fr;
+        }
+
+        ResultsPane {
+            width: 2fr;
+            border: solid #4a6fa5;
+            overflow-y: auto;
+            padding: 1 2;
+            background: #0d1433;
+            color: #ffffff;
+        }
+
+        ListView {
+            background: transparent;
+        }
+
+        ListItem {
+            padding: 1 2;
+            margin-bottom: 1;
+            background: #1a3a6e;
+            color: #ffffff;
+        }
+
+        ListItem:hover {
+            background: #4a6fa5;
+        }
+
+        ListItem.-highlighted {
+            background: #4a6fa5;
+        }
+
+        ListItem Label {
+             text-wrap: wrap;
+        }
+
+        DetailsPane {
+            width: 3fr;
+            border: solid #4a6fa5;
+            overflow-y: auto;
+            padding: 1 2;
+            background: #0d1433;
+            color: #ffffff;
+        }
+
+        SearchInput {
+            height: auto;
+            border: solid #ffffff;
+            padding: 1;
+            background: #0a0f2e;
+        }
+
+        SearchInput Input {
+            width: 1fr;
+            background: #0d1433;
+            color: #ffffff;
+            border: solid #4a6fa5;
+        }
+
+        SearchInput Button {
+            width: auto;
+            background: #1a3a6e;
+            color: #ffffff;
+        }
+
+        SearchInput Button:hover {
+            background: #4a6fa5;
+            color: #ffffff;
+        }
+
+        Label {
+            color: #ffffff;
+        }
+        Footer {
+            background: #1a3a6e;
+            color: #ffffff;
+        }
+
+        SplashScreen {
+            align: center middle;
+            background: #0a0f2e;
+        }
+
+        #ascii_art {
+            color: #4a6fa5;
+            text-align: center;
+            width: 100%;
+        }
+
+        #subtitle {
+            color: #ffffff;
+            text-align: center;
+            width: 100%;
+            margin-top: 1;
+        }
+
+        #prompt {
+            color: #4a6fa5;
+            text-align: center;
+            width: 100%;
+            margin-top: 2;
+        }

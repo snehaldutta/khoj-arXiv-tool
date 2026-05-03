@@ -1,6 +1,48 @@
 # Khoj — ArXiv Research Tool
 
+![Textual](https://img.shields.io/badge/Textual-TUI-008080?style=flat)
+![httpx](https://img.shields.io/badge/httpx-async-brightgreen?style=flat)
+![uv](https://img.shields.io/badge/uv-tool-DE5FE9?style=flat)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat)
+
 A terminal-based ArXiv research tool built with Python and Textual. Search papers, browse results, and read summaries without leaving your terminal.
+
+---
+
+## Home Screen
+
+<!-- Add a screenshot of the home screen here -->
+<!-- Recommended: run `khoj`, take a screenshot, save as `assets/screenshot.png`, then uncomment the line below -->
+![Khoj home screen](assets/Screenshot.png)
+
+
+---
+
+## Install
+
+Requires Python 3.10+ and [`uv`](https://docs.astral.sh/uv/).
+
+```bash
+uv tool install git+https://github.com/snehaldutta/khoj-arXiv-tool.git
+```
+
+Then run from anywhere:
+
+```bash
+khoj
+```
+
+To update to the latest version:
+
+```bash
+uv tool upgrade arxiv-rtool
+```
+
+To uninstall:
+
+```bash
+uv tool uninstall arxiv-rtool
+```
 
 ---
 
@@ -13,6 +55,16 @@ A terminal-based ArXiv research tool built with Python and Textual. Search paper
 - Open papers in your browser directly from the TUI
 - Async rate limiter to respect ArXiv API limits
 - Navy blue and white theme throughout
+
+---
+
+## Keybindings
+
+| Key     | Action                         |
+|---------|--------------------------------|
+| Enter   | Submit search / start the app  |
+| o       | Open selected paper in browser |
+| q       | Quit                           |
 
 ---
 
@@ -72,10 +124,9 @@ sequenceDiagram
 
 ```
 arxiv-research-tool/
-├── main.py                        # Entry point
 ├── pyproject.toml                 # Project config
 └── src/
-    └── arXiv_rtool/
+    └── arxiv_rtool/
         ├── app.py                 # Textual App + SplashScreen
         ├── arXivClient.py         # Async HTTP fetch + XML parser
         ├── rateLimiter.py         # asyncio.Lock + timestamp gatekeeper
@@ -100,26 +151,14 @@ ArXiv asks clients to make no more than one request every 3 seconds. The `RateLi
 
 ---
 
-## Setup
-
-Requires Python 3.10+ and `uv`.
+## Development Setup
 
 ```bash
 git clone https://github.com/your-username/arxiv-research-tool
 cd arxiv-research-tool
-uv pip install -e .
-python main.py
+uv sync
+uv run khoj
 ```
-
----
-
-## Keybindings
-
-| Key     | Action                        |
-|---------|-------------------------------|
-| Enter   | Submit search / start the app |
-| o       | Open selected paper in browser|
-| q       | Quit                          |
 
 ---
 
@@ -147,3 +186,4 @@ To contribute, fork the repo, create a branch, and open a pull request. Please k
 | `xml.etree.ElementTree` | Atom XML parsing (stdlib) |
 | `asyncio` | Async runtime + rate limiter |
 | `webbrowser` | Opening paper links (stdlib) |
+| [uv](https://docs.astral.sh/uv/) | Package manager + tool runner |

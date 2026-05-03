@@ -1,3 +1,4 @@
+from pathlib import Path
 from .rateLimiter import RateLimiter
 from .arXivClient import ArXivClient
 from .widgets.search_input import SearchInput
@@ -34,7 +35,7 @@ class SplashScreen(Screen):
 
 
 class ArXivResearchToolApp(App):
-    CSS_PATH = "app.tcss"
+    CSS_PATH = Path(__file__).parent / "app.tcss"
     BINDINGS = [("q", "quit", "Quit")]
 
     def __init__(self) -> None:
@@ -70,3 +71,11 @@ class ArXivResearchToolApp(App):
     def on_results_pane_paper_selected(self, event: ResultsPane.PaperSelected) -> None:
         details_pane = self.query_one(DetailsPane)
         details_pane.update_details(event.paper)
+
+
+def run():
+    ArXivResearchToolApp().run()
+
+
+if __name__ == "__main__":
+    ArXivResearchToolApp().run()
